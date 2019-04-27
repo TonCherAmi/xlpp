@@ -25,7 +25,7 @@ private:
 template <typename event_type>
 class basic_event {
 public:
-  basic_event(generic &&ev) : m_impl(reinterpret_cast<event_type *>(ev.m_impl.release())) { }
+  explicit basic_event(generic &&ev) : m_impl(reinterpret_cast<event_type *>(ev.m_impl.release())) { }
 
   auto operator->() const -> const std::unique_ptr<event_type> & {
     return m_impl;

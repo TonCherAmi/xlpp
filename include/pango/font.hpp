@@ -12,7 +12,7 @@ namespace pango::font {
 using ::generic::value;
 
 struct size : public value<int> {
-  size(int s) : value(s * scale) { }
+  explicit size(int s) : value(s * scale) { }
 
   constexpr static int scale = PANGO_SCALE;
 };
@@ -50,8 +50,8 @@ using description_wrapper = ::generic::unique_wrapper<PangoFontDescription>;
 
 class description : public description_wrapper {
 public:
-  description();
-  description(
+  explicit description();
+  explicit description(
     const std::string &family,
     const size &size,
     const style &style,

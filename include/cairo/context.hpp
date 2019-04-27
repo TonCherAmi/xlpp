@@ -19,8 +19,8 @@ class context : public context_wrapper {
 public:
   enum class operation { none, line, move, rect, fill, paint, stroke, text };
 
-  context();
-  context(surface &surface);
+  explicit context();
+  explicit context(surface &surface);
 
   auto operator<<(operation op) -> context &;
 

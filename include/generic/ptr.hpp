@@ -13,7 +13,7 @@ public:
   using pointer = typename std::add_pointer<type>::type;
 
   template <typename ...ts>
-  unique_wrapper(ts && ...args) : m_impl(std::forward<ts>(args)...) { }
+  explicit unique_wrapper(ts && ...args) : m_impl(std::forward<ts>(args)...) { }
 
   operator pointer() { return m_impl.get(); }
 
@@ -27,7 +27,7 @@ public:
   using pointer = typename std::add_pointer<type>::type;
 
   template <typename ...ts>
-  shared_wrapper(ts && ...args) : m_impl(std::forward<ts>(args)...) { }
+  explicit shared_wrapper(ts && ...args) : m_impl(std::forward<ts>(args)...) { }
 
   operator pointer() { return m_impl.get(); }
 

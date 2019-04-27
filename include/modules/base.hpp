@@ -13,7 +13,7 @@
 
 class module : public para::runnable {
 public:
-  module() {
+  explicit module() {
     m_surface = cairo::surface(1000, 1000);
     m_context = cairo::context(m_surface);
   }

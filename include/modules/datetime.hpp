@@ -22,7 +22,7 @@
 
 class datetime : public module {
 public:
-  datetime(int a = 5) : approx(a) { }
+  explicit datetime(int a = 5) : approx(a) { }
 
   auto run() -> void override {
     pango::font::description desc;

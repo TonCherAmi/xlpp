@@ -14,7 +14,7 @@
 
 class canvas : public event::notifiable<event::type::draw> {
 public:
-  canvas(x::connection connection, x::id window);
+  explicit canvas(x::connection connection, x::id window);
 
   auto render(cairo::surface &output) -> void;
 

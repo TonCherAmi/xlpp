@@ -19,7 +19,7 @@ using layout_wrapper = ::generic::unique_wrapper<PangoLayout>;
 
 class layout : public layout_wrapper {
 public:
-  layout(cairo::context &c);
+  explicit layout(cairo::context &c);
 
   auto operator<<(font::description &d) -> layout &;
   auto operator<<(const std::string &text) -> layout &;

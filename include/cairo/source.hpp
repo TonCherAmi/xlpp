@@ -9,8 +9,8 @@
 namespace cairo::source {
 
 struct rgb {
-  rgb();
-  rgb(std::string hex);
+  explicit rgb();
+  explicit rgb(std::string hex);
 
   double red{0.0};
   double green{0.0};
@@ -20,7 +20,7 @@ struct rgb {
 struct rgba : public rgb {
   using rgb::rgb;
 
-  rgba(std::string hex);
+  explicit rgba(std::string hex);
 
   double alpha{1.0};
 };
